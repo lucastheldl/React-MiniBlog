@@ -1,8 +1,14 @@
 import styles from "./Navbar.module.css";
+import { useAuthentication } from "../hooks/useAuthentication";
+
+import { UseAuthValue } from "../context/AuthContex";
 
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const { user } = UseAuthValue();
+  const { logOut } = useAuthentication();
+
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
@@ -17,22 +23,53 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/login"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Entrar
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/register"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Cadastrar
-          </NavLink>
-        </li>
+
+        {/*se nao estiver logado \/*/}
+        {!user && (
+          <>
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
+                Entrar
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/register"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
+                Cadastrar
+              </NavLink>
+            </li>
+          </>
+        )}
+
+        {/*se nao estiver logado \/*/}
+        {user && (
+          <>
+            <li>
+              <NavLink
+                to="/posts/create"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
+                Criar Post
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
+                Dashboard
+              </NavLink>
+            </li>
+          </>
+        )}
+
         <li>
           <NavLink
             to="/about"
@@ -41,6 +78,11 @@ const Navbar = () => {
             Sobre
           </NavLink>
         </li>
+        {user && (
+          <li>
+            <button onClick={logOut}>Sair</button>
+          </li>
+        )}
       </ul>
     </nav>
   );
