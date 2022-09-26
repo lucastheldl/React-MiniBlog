@@ -80,7 +80,7 @@ input,textarea{
   background-color: #0f730c;
   color: white;
 }
-.btn.btn-outline{
+.btn.btn-outline:hover{
   background-color: #000;
 }
 .btn.btn-danger:hover{
