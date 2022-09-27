@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
 
 //Context
-import { AuthProvider, UseAutValue } from "./context/AuthContex";
+import { AuthProvider } from "./context/AuthContex";
 
 //pages
 import Home from "./pages/Home/Home";
@@ -19,6 +19,7 @@ import Register from "./pages/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Search from "./pages/search/Search";
+import Post from "./pages/Post/Post";
 
 //components
 import Navbar from "./components/Navbar";
@@ -51,6 +52,7 @@ function App() {
 
               <Route path="/about" element={<About />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/posts/:id" element={<Post />} />
 
               <Route
                 path="/login"
