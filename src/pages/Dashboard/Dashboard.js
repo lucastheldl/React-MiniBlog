@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 //hooks
 import { useAuthValue } from "../../context/AuthContex";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
+import { useDeleteDocument } from "../../hooks/useDeletDocument";
 
 const Dashboard = () => {
   const { user } = useAuthValue();
   const uid = user.uid;
 
   const { documents: posts, loading } = useFetchDocument("posts", null, uid);
-
-  const deleteDocument = (id) => {};
+  const { deleteDocument } = useDeleteDocument("posts");
 
   if (loading) {
     return <p>Carregando...</p>;
