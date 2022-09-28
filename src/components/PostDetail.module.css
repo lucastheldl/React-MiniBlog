@@ -3,6 +3,7 @@
   border: 1px solid #444;
   border-radius: 10px;
   padding: 1em;
+  max-width: 600px;
 }
 
 .post_detail img{
@@ -16,7 +17,7 @@
 .post_detail .tags{
   margin-bottom: 1.2em;
   display: flex;
-
+  flex-wrap: wrap;
 }
 .tags p{
   margin-right:.5em ;
