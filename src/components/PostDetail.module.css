@@ -5,10 +5,14 @@
   padding: 1em;
   max-width: 600px;
 }
+.post_detail .img_container{
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
 
 .post_detail img{
-  max-width: 600px;
-  
+  max-width: 100%;
 }
 
 .post_detail h2{
