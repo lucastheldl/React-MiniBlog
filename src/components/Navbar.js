@@ -11,13 +11,13 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <NavLink to="/" className={styles.brand}>
+      <NavLink to="/React-MiniBlog/" className={styles.brand}>
         Mini <span>Blog</span>
       </NavLink>
       <ul className={styles.links_list}>
         <li>
           <NavLink
-            to="/"
+            to="/React-MiniBlog/"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
             Home
@@ -29,7 +29,7 @@ const Navbar = () => {
           <>
             <li>
               <NavLink
-                to="/login"
+                to="/React-MiniBlog/login"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Entrar
@@ -38,7 +38,7 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                to="/register"
+                to="/React-MiniBlog/register"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Cadastrar
@@ -52,7 +52,7 @@ const Navbar = () => {
           <>
             <li>
               <NavLink
-                to="/posts/create"
+                to="/React-MiniBlog/posts/create"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Criar Post
@@ -61,7 +61,7 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                to="/dashboard"
+                to="/React-MiniBlog/dashboard"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Dashboard
@@ -72,7 +72,7 @@ const Navbar = () => {
 
         <li>
           <NavLink
-            to="/about"
+            to="/React-MiniBlog/about"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
             Sobre

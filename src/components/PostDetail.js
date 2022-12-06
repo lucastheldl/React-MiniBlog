@@ -21,7 +21,7 @@ const PostDetail = ({ post }) => {
           </p>
         ))}
       </div>
-      <Link to={`/posts/${post.id}`} className="btn btn-outline">
+      <Link to={`/React-MiniBlog/posts/${post.id}`} className="btn btn-outline">
         Ler
       </Link>
     </div>

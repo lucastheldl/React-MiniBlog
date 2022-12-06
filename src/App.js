@@ -49,34 +49,46 @@ function App() {
           <Navbar />
           <div className="container">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/React-MiniBlog" element={<Home />} />
 
-              <Route path="/about" element={<About />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/posts/:id" element={<Post />} />
+              <Route path="/React-MiniBlog/about" element={<About />} />
+              <Route path="/React-MiniBlog/search" element={<Search />} />
+              <Route path="/React-MiniBlog/posts/:id" element={<Post />} />
 
               <Route
-                path="/login"
-                element={!user ? <Login /> : <Navigate to="/" />}
+                path="/React-MiniBlog/login"
+                element={!user ? <Login /> : <Navigate to="/React-MiniBlog/" />}
               />
 
               <Route
-                path="/register"
-                element={!user ? <Register /> : <Navigate to="/" />}
+                path="/React-MiniBlog/register"
+                element={
+                  !user ? <Register /> : <Navigate to="/React-MiniBlog/" />
+                }
               />
               <Route
-                path="/posts/edit/:id"
-                element={user ? <EditPost /> : <Navigate to="/login" />}
+                path="/React-MiniBlog/posts/edit/:id"
+                element={
+                  user ? <EditPost /> : <Navigate to="/React-MiniBlog/login" />
+                }
               />
 
               <Route
-                path="/posts/create"
-                element={user ? <CreatePost /> : <Navigate to="/login" />}
+                path="/React-MiniBlog/posts/create"
+                element={
+                  user ? (
+                    <CreatePost />
+                  ) : (
+                    <Navigate to="/React-MiniBlog/login" />
+                  )
+                }
               />
 
               <Route
-                path="/dashboard"
-                element={user ? <Dashboard /> : <Navigate to="/login" />}
+                path="/React-MiniBlog/dashboard"
+                element={
+                  user ? <Dashboard /> : <Navigate to="/React-MiniBlog/login" />
+                }
               />
             </Routes>
           </div>
