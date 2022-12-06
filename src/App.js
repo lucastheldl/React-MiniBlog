@@ -49,7 +49,7 @@ function App() {
           <Navbar />
           <div className="container">
             <Routes>
-              <Route path="/React-MiniBlog" element={<Home />} />
+              <Route path="/React-MiniBlog/" element={<Home />} />
 
               <Route path="/React-MiniBlog/about" element={<About />} />
               <Route path="/React-MiniBlog/search" element={<Search />} />
